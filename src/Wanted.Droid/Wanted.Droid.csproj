@@ -41,6 +41,7 @@
     <BundleAssemblies>false</BundleAssemblies>
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <LangVersion>8.0</LangVersion>
+    <MandroidI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -70,8 +71,7 @@
     <Compile Include="Setup.cs" />
     <Compile Include="Views\BaseActivity.cs" />
     <Compile Include="Views\BaseFragment.cs" />
-    <Compile Include="Views\Main\MainContainerActivity.cs" />
-    <Compile Include="Views\Main\MainFragment.cs" />
+    <Compile Include="Views\Main\MainView.cs" />
     <Compile Include="Views\Splash\SplashActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +83,9 @@
     <PackageReference Include="MvvmCross.DroidX.Material">
       <Version>7.1.2</Version>
     </PackageReference>
+    <PackageReference Include="MvvmCross.Plugin.FieldBinding">
+      <Version>7.1.2</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.ConstraintLayout">
       <Version>2.0.4.2</Version>
     </PackageReference>
@@ -92,9 +95,7 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\fragment_main.axml" />
     <AndroidResource Include="Resources\layout\layout_toolbar.axml" />
-    <AndroidResource Include="Resources\layout\activity_main_container.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\strings.xml" />
@@ -129,6 +130,11 @@
       <Project>{B0D93FAF-307D-4AC6-901A-3E48F6875AE1}</Project>
       <Name>Wanted.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\layout_main_view.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

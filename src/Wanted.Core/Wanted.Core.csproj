@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="MvvmCross" Version="7.1.2" />
+    <PackageReference Include="MvvmCross.Plugin.FieldBinding" Version="7.1.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Services\Services.csproj" />

@@ -156,16 +156,15 @@
       <Project>{B0D93FAF-307D-4AC6-901A-3E48F6875AE1}</Project>
       <Name>Wanted.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Services\Services.csproj">
-      <Project>{6EB33808-1A1C-42DF-A98D-8C2187F026C7}</Project>
-      <Name>Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Cirrious.FluentLayout">
       <Version>2.9.0</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross">
+      <Version>7.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmCross.Plugin.FieldBinding">
       <Version>7.1.2</Version>
     </PackageReference>
   </ItemGroup>
@@ -216,10 +215,7 @@
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Main\" />
-    <Folder Include="Converter\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
