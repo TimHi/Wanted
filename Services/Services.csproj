@@ -30,9 +30,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataService\IDataService.cs" />
     <Compile Include="DataService\DataService.cs" />
+    <Compile Include="DataService\FBIAPI\Model\Person.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataService\" />
+    <Folder Include="DataService\FBIAPI\" />
+    <Folder Include="DataService\FBIAPI\Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

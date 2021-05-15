@@ -1,21 +1,50 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
-// actions declared in your storyboard file.
-// Manual changes to this file will not be maintained.
+// This file has been generated automatically by Visual Studio to store outlets and
+// actions made in the UI designer. If it is removed, they will be lost.
+// Manual changes to this file may not be handled correctly.
 //
 using Foundation;
-using System;
 using System.CodeDom.Compiler;
-using UIKit;
 
 namespace Wanted.iOS.Views.Main
 {
-    [Register("MainView")]
-    partial class MainView
-    {
-        void ReleaseDesignerOutlets()
-        {
-        }
-    }
+	[Register ("MainView")]
+	partial class MainView
+	{
+		[Outlet]
+		UIKit.UILabel Description { get; set; }
+
+		[Outlet]
+		UIKit.UILabel Header { get; set; }
+
+		[Outlet]
+		UIKit.UIImageView Image { get; set; }
+
+		[Outlet]
+		UIKit.UILabel Name { get; set; }
+		
+		void ReleaseDesignerOutlets ()
+		{
+			if (Image != null) {
+				Image.Dispose ();
+				Image = null;
+			}
+
+			if (Name != null) {
+				Name.Dispose ();
+				Name = null;
+			}
+
+			if (Header != null) {
+				Header.Dispose ();
+				Header = null;
+			}
+
+			if (Description != null) {
+				Description.Dispose ();
+				Description = null;
+			}
+		}
+	}
 }
