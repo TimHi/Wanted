@@ -31,6 +31,7 @@
     <Compile Include="DataService\IDataService.cs" />
     <Compile Include="DataService\DataService.cs" />
     <Compile Include="DataService\FBIAPI\Model\Person.cs" />
+    <Compile Include="DataService\FBIAPI\Config.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataService\" />

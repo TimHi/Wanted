@@ -16,6 +16,7 @@ namespace Wanted.iOS.Views.Main
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            NavigationController.NavigationBarHidden = true;
             CreateBindings();
         }
 

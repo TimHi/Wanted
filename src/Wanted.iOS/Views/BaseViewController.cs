@@ -13,16 +13,6 @@ namespace Wanted.iOS.Views
         {
             base.ViewDidLoad();
 
-            View.BackgroundColor = UIColor.White;
-
-            NavigationController.NavigationBar.BarStyle = UIBarStyle.Black;
-            NavigationController.NavigationBar.Translucent = false;
-            NavigationController.NavigationBar.Hidden = false;
-            NavigationController.NavigationBar.BarTintColor = ColorPalette.Primary;
-            NavigationController.NavigationBar.TintColor = UIColor.White;
-
-            NavigationController.SetNeedsStatusBarAppearanceUpdate();
-
             CreateView();
 
             LayoutView();
@@ -34,7 +24,7 @@ namespace Wanted.iOS.Views
         {
             base.ViewWillAppear(animated);
 
-            View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
+            //View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
         }
 
         protected virtual void CreateView()
