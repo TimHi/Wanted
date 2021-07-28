@@ -24,8 +24,8 @@
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <MtouchExtraArgs>--linkskip=Wanted.Core</MtouchExtraArgs>
-    <MtouchSdkVersion>13.6</MtouchSdkVersion>
     <LangVersion>8.0</LangVersion>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -48,9 +48,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>Apple Development: timhiller@live.de (84N75NL3YX)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchExtraArgs>--linkskip=Wanted.Core</MtouchExtraArgs>
@@ -155,6 +155,10 @@
     <ProjectReference Include="..\Wanted.Core\Wanted.Core.csproj">
       <Project>{B0D93FAF-307D-4AC6-901A-3E48F6875AE1}</Project>
       <Name>Wanted.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Services.csproj">
+      <Project>{6EB33808-1A1C-42DF-A98D-8C2187F026C7}</Project>
+      <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

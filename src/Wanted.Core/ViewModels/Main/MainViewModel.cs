@@ -25,6 +25,13 @@ namespace Wanted.Core.ViewModels.Main
             set => SetProperty(ref _headerText, value, nameof(HeaderText)); 
         }
 
+        private string _imageURL;
+        public string ImageURL
+        {
+            get => _imageURL;
+            set => SetProperty(ref _imageURL, value, nameof(ImageURL));
+        }
+
         private Person _wantedPerson;
         public Person WantedPerson
         {
@@ -34,15 +41,19 @@ namespace Wanted.Core.ViewModels.Main
 
         public override async Task Initialize()
         {
-            await _dataService.GetFullList(0);
+            var wantedList = await _dataService.GetFullList(0);
+            WantedPerson = wantedList[0];
+            NameText = wantedList[0].title;
+            HeaderText = wantedList[0].reward_text;
+            ImageURL = wantedList[0].images[0];
+            await RaiseAllPropertiesChanged();
+
         }
 
         public MainViewModel(IDataService dataService)
         {
             _dataService = dataService;
             _headerText = "Wanted:";
-            _wantedPerson = new Person("Schwein", "Peter", @"https://d2k62v4a641q9c.cloudfront.net/media/image/78/2e/5b/PS2021_Sport1_Irokesenschwein_Lila_2021_1.png", "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
-            _nameText = _wantedPerson.FirstName + " " + _wantedPerson.LastName;
         }
     }
 }
