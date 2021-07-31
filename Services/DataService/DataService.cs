@@ -35,15 +35,24 @@ namespace Services.DataService
         {
             var resultList = new List<Person>();
             var result = await PerformCloudRequestAsync();
-            dynamic WantedList = JsonConvert.DeserializeObject(result);
+            dynamic WantedList = JsonConvert.DeserializeObject<dynamic>(result);
             var personList = WantedList["items"];
-            if(personList != null)
+
+            if (personList != null)
             {
                 foreach(var jsonPerson in personList)
                 {
-                    Person p = new Person(url: url, age_range: age_range, uid: uid, weight: weight, hair: hair,
-                        ncic: ncic, caution: caution, title: title, images: images);
-                    resultList.Add(p);
+
+                    Person wantedPerson;
+                    try
+                    {
+                        wantedPerson = JsonConvert.DeserializeObject<Person>(JsonConvert.SerializeObject(jsonPerson));
+                        resultList.Add(wantedPerson);
+                    }
+                    catch(Exception exception)
+                    {
+                        //TODO: LOGGER
+                    }
                 }
             }
             return resultList;

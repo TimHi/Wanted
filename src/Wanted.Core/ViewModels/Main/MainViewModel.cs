@@ -45,7 +45,7 @@ namespace Wanted.Core.ViewModels.Main
             WantedPerson = wantedList[0];
             NameText = wantedList[0].title;
             HeaderText = wantedList[0].reward_text;
-            ImageURL = wantedList[0].images[0];
+            //ImageURL = wantedList[0].images[0];
             await RaiseAllPropertiesChanged();
 
         }
